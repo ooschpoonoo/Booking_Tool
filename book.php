@@ -17,4 +17,5 @@ if(!$result){
 
 
 mysql_close($conn);
+header("location: Bookings.php");
 ?>
