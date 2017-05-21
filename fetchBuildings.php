@@ -3,9 +3,7 @@ try {
 
 include "connect.php";
     // Prepare and execute query
-$results = mysql_query("SELECT booking_id, u.name as UserName,room_id, b.start_time, b.end_time
-						FROM booking b  
-						INNER JOIN user u ON b.user_id = u.user_id")
+$results = mysql_query("SELECT * FROM room")
 						or die(mysql_error());
 
     // Returning array
@@ -16,11 +14,10 @@ $results = mysql_query("SELECT booking_id, u.name as UserName,room_id, b.start_t
 	
 		while($result = mysql_fetch_array($results)){
 			$e = array();
-			$e['id'] = $result['booking_id'];
-			$e['resourceId'] =  $result['room_id'];
-			$e['title'] =  $result['UserName'];;
-			$e['start'] = $result['start_time'];
-			$e['end'] = $result['end_time'];
+			$e['id'] = $result['room_id'];
+			$e['building'] =  $result['building'];;
+			$e['title'] = $result['name'];
+			$e['occupancy'] = $result['occupancy'];
 			
 			// Merge the event array into the return array
 			array_push($events, $e);

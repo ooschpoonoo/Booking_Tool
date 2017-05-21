@@ -6,4 +6,5 @@
 <a href="index.php"> Home</a>
 <a href="submit.php"> Search</a>
 <a href="Bookings.php"> Bookings</a>
+<a href="room.php"> Room</a>
 </div>
